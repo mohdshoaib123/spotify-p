@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv"
 import songRoute from './route.js'
-import redis from 'redis'
+import { createClient } from "redis"
 import cors from 'cors'
 
 
@@ -9,15 +9,43 @@ import cors from 'cors'
 
 dotenv.config()
 
-export const redisClient=redis.createClient({password:process.env.REDIS_PASSWORD as string,
-  socket:{
-  host:"redis-18310.crce206.ap-south-1-1.ec2.cloud.redislabs.com",
-  port:18310}
+export const redisClient=createClient({
+  url:process.env.REDIS_URL as string
+ 
 })
+
+
+
+
+// Connection established
+redisClient.on("connect", () => {
+  console.log("✅ Redis connecting...");
+});
+
+// Ready to use
+redisClient.on("ready", () => {
+  console.log("✅ Redis ready");
+});
+
+// Any Redis error
+redisClient.on("error", (err) => {
+  console.error("❌ Redis Error:", err);
+});
+
+// Socket closed
+redisClient.on("end", () => {
+  console.log("🔌 Redis connection closed");
+});
+
+// Reconnecting
+redisClient.on("reconnecting", () => {
+  console.log("🔄 Redis reconnecting...");
+});
 
 redisClient.connect()
 .then(()=>console.log("connected to redis"))
 .catch((err)=>console.log(err))
+
 
 const app=express()
 app.use(cors())

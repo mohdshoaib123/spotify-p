@@ -11,9 +11,6 @@ async function main() {
     await mongoose.connect(process.env.MONGO_URI);
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
-app.get("/", (req, res) => {
-    res.send("success");
-});
 app.use('/api/v1', userRoutes);
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
