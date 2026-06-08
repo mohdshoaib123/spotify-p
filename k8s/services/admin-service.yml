@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-service
+  namespace: spotify-prod
+spec:
+  selector:
+    app: admin-service
+  ports:
+  - port: 6001
+    targetPort: 6001

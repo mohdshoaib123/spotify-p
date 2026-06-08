@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-service
+  namespace: spotify-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: admin-service
+  template:
+    metadata:
+      labels:
+        app: admin-service
+    spec:
+      containers:
+      - name: admin-service
+        image: mohdshoyab/admin-service:latest
+        ports:
+        - containerPort: 6001
+        envFrom:
+        - configMapRef:
+            name: admin-config
