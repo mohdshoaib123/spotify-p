@@ -29,7 +29,7 @@ spec:
             port:
               number: 7000
 
-      - path: /api/admin
+      - path: /api/v1/admin
         pathType: Prefix
         backend:
           service:

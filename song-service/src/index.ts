@@ -54,7 +54,7 @@ app.use(cors())
 
 const PORT =process.env.PORT
 
-app.use('/api/v1',songRoute)
+app.use('/api/v1/song',songRoute)
 
 app.listen(PORT,()=>{
   console.log(`server are listen on PORT ${PORT}`)

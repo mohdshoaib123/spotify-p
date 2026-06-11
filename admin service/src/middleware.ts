@@ -24,7 +24,7 @@ export const isAuth=async (req:Authenticate,res:Response,next:NextFunction)=>{
       return res.status(403).json({message:"login first"})
     }
 
-   const{data}= await axios.get(`${process.env.USER_URL}/api/v1/user/getprofile`,{headers:{token}})
+   const{data}= await axios.get(`${process.env.USER_URL}/api/v1/user/user/getprofile`,{headers:{token}})
 
    req.user=data.user
    

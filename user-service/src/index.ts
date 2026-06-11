@@ -19,7 +19,7 @@ async function main() {
 }
 
 
-app.use('/api/v1',userRoutes)
+app.use('/api/v1/user',userRoutes)
 
 
 const port=process.env.PORT || 5000
