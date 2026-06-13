@@ -29,6 +29,7 @@ A full-stack **Spotify** Clone built using a Microservices Architecture. The app
 * Docker
 * Docker Compose
 * Cloud deployment (Render / Vercel)
+* orchestrate through kubernetes cluster
 
 ---
 
