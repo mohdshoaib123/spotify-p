@@ -1,2 +1,3 @@
-.env
 node_module
+config.bat
+node_modules
