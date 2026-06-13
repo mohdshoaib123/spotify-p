@@ -1,8 +1,6 @@
 # 🎵 Spotify Microservices Clone
 
-A full-stack **Spotify Clone** built using a **Microservices Architecture**.
-This project demonstrates scalable backend services, modern frontend development, and containerized deployment using Docker.
-
+A full-stack **Spotify** Clone built using a Microservices Architecture. The application features a modern frontend, scalable backend services, and containerized deployment using Docker. Backend services are orchestrated through Kubernetes on AWS EC2, leveraging horizontal scaling to ensure high availability, fault tolerance, and efficient resource utilization under varying traffic loads.
 ---
 
 ## 🚀 Tech Stack
